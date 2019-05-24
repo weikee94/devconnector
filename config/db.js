@@ -5,11 +5,14 @@ const db = config.get("mongoURI");
 // this will return promise (async await using here)
 const connectDB = async () => {
   try {
-    await mongoose.connect(db, {
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useFindAndModify: false
-    });
+    await mongoose.connect(
+      "mongodb+srv://admin123:admin123@devconnector-kkpu5.mongodb.net/test?retryWrites=true",
+      {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+      }
+    );
     console.log("MongoDB Connected");
   } catch (err) {
     console.error(err.message);
